@@ -1,10 +1,37 @@
 <template>
-  <div id="nav">
+  <!-- <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div>
-  <router-view/>
+  <router-view/> -->
+
+  <div>
+    <input v-model="name" type="text" /> 
+    {{name}}
+    <hr>
+    <button @click="incrementsCounter">+ counter</button>
+    {{counter}}
+  </div>
+
 </template>
+
+<script> // javascript
+export default {
+  
+  data() {
+    return {
+      name: 'tria bagus', // local state, return an object
+      counter: 0, 
+    }
+  }, 
+
+  methods:{ // function method in vue 
+    incrementsCounter(){
+      this.counter++ 
+    }
+  }
+}
+</script>>
 
 <style lang="scss">
 #app {

@@ -13,7 +13,9 @@
                   <h3>{{movie.year}}</h3>
                   <h3>{{movie.genre}}</h3>
                   <h3>
-                      <span :style="{'background-color':getRatingColor()}">{{movie.rating}}</span>
+                      <span 
+                      id="movie-rating"
+                      :style="{'background-color':getRatingColor()}">{{movie.rating}}</span>
                   </h3>
                   <h3>Budget: {{movie.budget}}</h3>
                   <h3>Box Office: {{movie.boxOffice}}</h3>
@@ -44,8 +46,13 @@
 
 <script>
 import Navbar from '../components/Navbar'
+import ratingMixin from '../mixins/getRatingColor' 
 
 export default {
+    mixins:[ 
+        ratingMixin
+    ],
+
     components:{
         Navbar
     },
@@ -61,15 +68,7 @@ export default {
         return {
             movie: [],
         }
-    },
-
-    methods:{
-        getRatingColor() {
-            if(this.movie.rating > 7) return "#59886b"
-            if(this.movie.rating > 4) return "#ffc85c"
-            return "#c05555"  
-		},
-    },
+    }, 
 
     created(){
         // call from store
@@ -88,7 +87,7 @@ export default {
 			justify-content: center;
 			flex-grow: 1;
 			margin-top: 90px;
-			padding: 0 1rem;
+			padding: 0 1rem 10rem 1rem;
 
 			#movie-poster {
 				flex-grow: 1;

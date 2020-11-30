@@ -4,7 +4,7 @@
       <div class="description">
           <div class="basic-info">
               <h3>{{movie.name}}</h3>
-              <span>{{movie.rating}}</span>
+              <span :style="{'background-color':getRatingColor()}">{{movie.rating}}</span>
           </div> 
               <p>{{movie.genre}}</p>
               <p>{{movie.year}}</p>
@@ -20,11 +20,22 @@ export default {
             type:Object,
             default:() => {} 
         }
+    },
+
+    methods:{
+        getRatingColor() {
+            if(this.movie.rating > 7) return "#e5b85e"
+            if(this.movie.rating > 4) return "#ffa809"
+            return "#e10505"  
+        }
     }
 }
 </script>
 
 <style lang='scss' scoped>
+    // #e5b85e
+    // #ffa809
+    // #e10505 
 	.movie {
 		flex: 1;
 		margin: 1rem;
@@ -34,6 +45,7 @@ export default {
 
 		img {
 			max-width: 100%;
+            max-height: 260px;
 			box-shadow: 0 14px 28px rgba(0, 0, 0, 0.473),
 				0 10px 10px rgba(0, 0, 0, 0.473);
 			margin-bottom: 7px;
@@ -52,12 +64,14 @@ export default {
 					margin: 0;
 					text-align: left;
 					color: white;
+                    font-size:12px;
 				}
 
 				span {
-					border-radius: 10px;
-					font-size: 20px;
-					width: 53px;
+					border-radius: 20px;
+					font-size: 15px;
+					width: 50px;
+                    padding:5px 0px;
 					color: white;
 				}
 			}

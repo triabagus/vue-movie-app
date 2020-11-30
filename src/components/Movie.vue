@@ -24,18 +24,15 @@ export default {
 
     methods:{
         getRatingColor() {
-            if(this.movie.rating > 7) return "#e5b85e"
-            if(this.movie.rating > 4) return "#ffa809"
-            return "#e10505"  
+            if(this.movie.rating > 7) return "#59886b"
+            if(this.movie.rating > 4) return "#ffc85c"
+            return "#c05555"  
         }
     }
 }
 </script>
 
-<style lang='scss' scoped>
-    // #e5b85e
-    // #ffa809
-    // #e10505 
+<style lang='scss' scoped> 
 	.movie {
 		flex: 1;
 		margin: 1rem;

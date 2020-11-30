@@ -1,16 +1,45 @@
 <template>
   <div id="filters">
       <h3>Filters</h3>
-      <p>Rating highest</p>
-      <p>Rating lowest</p>
-      <p>Your rewest</p>
-      <p>Your oldest</p>  
+      <p v-for="(filter,index) in filters" :key="index" @click="applyFilter(filter)">
+		{{filter.name}}	  
+	  </p>  
   </div>
 </template>
 
 <script>
 export default {
-
+	data(){
+		return {
+			filters: [
+				{
+					name: 'Rating highest',
+					key: 'rating',
+					order: 'desc'
+				},
+				{
+					name: 'Rating lowest',
+					key: 'rating',
+					order: 'asc'
+				},
+				{
+					name: 'Your rewest',
+					key: 'year',
+					order: 'desc'
+				},
+				{
+					name: 'Your oldest',
+					key: 'year',
+					order: 'asc'
+				},
+			]
+		}
+	},
+	methods:{
+		applyFilter(filter){
+			this.$store.dispatch('filter', filter);
+		}
+	}
 }
 </script>
 

@@ -17,6 +17,10 @@
                   </div>
 
                   <div class="modal-footer">
+					  <button @click="$emit('close')">
+						  Close
+					  </button>
+ 
                       <slot name="footer">
                         <div></div>
                           
@@ -77,7 +81,7 @@ export default {
 				.modal-body {
 					padding: 20px;
 					background-color: #fff;
-					max-height: 550px;
+					max-height: 480px;
 					overflow: auto;
 
 					input {
@@ -92,7 +96,7 @@ export default {
 
 				.modal-footer {
 					padding: 10px;
-					background-color: #fff;
+					background-color: #222b31;
 					display: flex;
 					justify-content: space-between;
 					border-bottom-left-radius: 10px;

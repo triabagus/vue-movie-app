@@ -22,7 +22,8 @@
                   <h3>
                     Actors:
                     <span v-for="(actor, index) in movie.actors" :key='index'>
-                        {{actor.name}}    
+                        {{actor.name}} 
+						<span v-if="index+1 != movie.actors.length">, </span>    
                     </span>    
                   </h3>  
                   <h3>

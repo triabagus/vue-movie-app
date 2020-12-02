@@ -138,9 +138,9 @@ export default {
 		addMovie(e){
 			e.preventDefault();
 
-			console.log('Submit: ', this.form)
-			// this.$store.dispatch("addMovie", this.form)
-			// this.showModal = false
+			// console.log('Submit: ', this.form)
+			this.$store.dispatch("addMovie", this.form)
+			this.showModal = false
 		}
 	}
 }

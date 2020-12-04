@@ -85,7 +85,7 @@
 
 					<textarea
 						required
-						v-model="form.storyLine"
+						v-model="form.storyline"
 						placeholder="Story Line"
 						rows="6"
 					/> 
@@ -125,7 +125,7 @@ export default {
 				boxOffice: '',
 				poster: '',
 				actors: [{name:''}],
-				storyLine: '', 
+				storyline: '', 
 			}
 		}
 	},

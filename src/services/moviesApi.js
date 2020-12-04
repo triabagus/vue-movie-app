@@ -4,28 +4,30 @@ const db = firebase.firestore().collection('movies')
 
 const moviesApi = {
     
-    getMovies: async() => {
+    getMovies: async () => {
         const documents = await db.get()
         return documents.docs.map(doc => {
             return {...doc.data(), id:doc.id }
         }) 
     }, 
 
-    // addMovie: async => {
+    addMovie: async (form) => {
+        const {id} = await db.add(form)
+        return {...form,id}
+    },
 
-    // },
+    getMovieById: async (id) => {
+        const document = await db.doc(id).get()
+        return {...document.data(), id}
+    },
 
-    // getMovieById: async => {
+    updateMovie: async () => {
 
-    // },
+    },
 
-    // updateMovie: async => {
-
-    // },
-
-    // deleteMovie: async => {
+    deleteMovie: async () => {
          
-    // }
+    }
 }
  
 export default moviesApi

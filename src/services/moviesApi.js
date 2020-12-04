@@ -21,8 +21,8 @@ const moviesApi = {
         return {...document.data(), id}
     },
 
-    updateMovie: async () => {
-
+    updateMovie: async (form) => {
+        return await db.doc(form.id).update(form)
     },
 
     deleteMovie: async () => {

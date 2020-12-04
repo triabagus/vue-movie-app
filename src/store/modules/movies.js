@@ -76,7 +76,11 @@ const actions = {
     },
 
     updateMovie({commit}, movie){
-        commit(UPDATE_MOVIE, movie)
+        // commit(UPDATE_MOVIE, movie) 
+
+        moviesApi.updateMovie(movie)
+        .then(res => commit(UPDATE_MOVIE, res))
+        .catch(err => console.log(err))
     },
 
     fetchMovies({commit}){

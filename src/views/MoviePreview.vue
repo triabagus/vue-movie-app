@@ -168,8 +168,9 @@ export default {
 		},
 
 		deleteMovie(){
-			this.$store.dispatch('deleteMovie', parseInt(this.id))
-			this.$router.push('/')
+			// this.$store.dispatch('deleteMovie', parseInt(this.id)) 
+			this.$store.dispatch('deleteMovie', this.id)
+			this.$router.push('/') 
 		},
 
 		addActor() {

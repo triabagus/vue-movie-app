@@ -72,7 +72,14 @@ const actions = {
     },
 
     deleteMovie({commit}, id){
-        commit(DELETE_MOVIE, id) 
+        // commit(DELETE_MOVIE, id)  
+
+        moviesApi.deleteMovie(id) 
+        .then(res => {
+            commit(DELETE_MOVIE, res) 
+            return
+        })
+        .catch(err => console.log(err))
     },
 
     updateMovie({commit}, movie){

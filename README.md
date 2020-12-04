@@ -5,6 +5,20 @@
 npm install
 ```
 
+## Env Configuration
+Create .env file so your add script or edit .env.example
+
+You get Configuration Firebase add application in summary project, and choice platform
+```
+VUE_APP_APIKEY = YOUR_FIREBASE_APIKEY
+VUE_APP_AUTHDOMAIN = YOUR_FIREBASE_AUTHDOMAIN
+VUE_APP_DATABASEURL = YOUR_FIREBASE_DATABASEURL
+VUE_APP_PROJECTID = YOUR_FIREBASE_PROJECTID
+VUE_APP_STORAGEBUCKET = YOUR_FIREBASE_STORAGEBUCKET
+VUE_APP_MESSAGINGSENDERID = YOUR_FIREBASE_MESSAGINGSENDERID
+VUE_APP_APPID = YOUR_FIREBASE_APPID 
+```
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve

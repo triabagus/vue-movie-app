@@ -26,7 +26,11 @@ export default {
 
 	// created() { // sekali berjalan/dibuat
 	// 	this.movies = this.$store.getters.getMovies
-	// }  
+	// } 
+	
+	created() {  
+		this.$store.dispatch('fetchMovies')
+	} 
 }
 </script>
 

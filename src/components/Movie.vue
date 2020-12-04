@@ -1,10 +1,10 @@
 <template>
   <div class="movie">
       <img :src="movie.poster" alt="Movie Poster" @click="openDetails" /> 
+	  <span :style="{'background-color':getRatingColor()}">{{movie.rating}}</span> 
       <div class="description">
           <div class="basic-info">
               <h3>{{movie.name}}</h3>
-              <span :style="{'background-color':getRatingColor()}">{{movie.rating}}</span>
           </div> 
               <p>{{movie.genre}}</p>
               <p>{{movie.year}}</p>
@@ -42,19 +42,33 @@ export default {
 <style lang='scss' scoped> 
 	.movie {
 		flex: 1;
-		margin: 1rem;
-		min-width: 200px;
-		max-width: 200px;
+		margin: 2rem;
+		min-width: 250px;
+		max-width: 250px;
 		position: relative;
 
 		img {
 			max-width: 100%;
-            max-height: 260px;
+            max-height: 350px;
 			box-shadow: 0 14px 28px rgba(0, 0, 0, 0.473),
 				0 10px 10px rgba(0, 0, 0, 0.473);
 			margin-bottom: 7px;
 			border-radius: 15px;
 			cursor: pointer;
+		} 
+
+		span {
+			    border-radius: 50%;
+				font-size: 18px;
+				width: 20px;
+				height: 20px;
+				padding: 10px;
+				text-align: center;
+				font-weight: bold;
+				color: white;
+				position: absolute;
+				top: 8px;
+				right: 16px;
 		}
 
 		.description {
@@ -67,22 +81,15 @@ export default {
 				h3 {
 					margin: 0;
 					text-align: left;
-					color: white;
-                    font-size:12px;
-				}
-
-				span {
-					border-radius: 20px;
-					font-size: 15px;
-					width: 50px;
-                    padding:5px 0px;
-					color: white;
+					color: #1b1d1b;
+                    font-size: 20px;
 				}
 			}
 
 			p {
 				margin: 5px 0;
-				color: rgb(143, 143, 143);
+				color:#404040;
+				font-size:18px;
 				text-align: left;
 			}
 		}

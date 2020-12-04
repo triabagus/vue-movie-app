@@ -1,7 +1,7 @@
 <template>
   <div id="sidebar"> 
       <Filters /> 
-      <button @click="showModal = true">Add Movie</button>
+      <button @click="showModal = true">+ Add Movie</button>
 
 	  <Modal v-if="showModal" @close="showModal = !showModal">
 		<template v-slot:header>
@@ -150,22 +150,23 @@ export default {
 	#sidebar {
 		display: flex;
 		flex-direction: column;
-		padding: 10px;
+		padding: 32px;
 		min-height: 100vh;
-		min-width: 150px;
-		max-width: 150px;
+		min-width: 200px;
+		max-width: 200px;
 		flex-grow: 1;
-		background-color: #191c1f;
+		background-color: #070608;
 		justify-content: left;
 
 		& > button {
 			margin-top: 20px;
-			height: 30px;
-			background-color: #5eb85e;
-			border: none;
-			text-transform: uppercase;
+			height: 40px; 
+			font-size:18px;
+			color:white;
+			background-color: rgb(89, 136, 107);
+			border: none; 
 			font-weight: 600;
-			border-radius: 10px;
+			border-radius: 5px;
 			outline: none;
 			cursor: pointer;
 		}
@@ -186,7 +187,7 @@ export default {
 			}
 
 			.add-actor {
-				background-color: green;
+				background-color: rgb(89, 136, 107);
 				text-align: center;
 				color: white;
 				margin-left: 5px;
@@ -200,7 +201,7 @@ export default {
 		}
 
 		#add-movie {
-			background-color: #5eb85e;
+			background-color: rgb(89, 136, 107);
 			border: none;
 			padding: 5px;
 			width: 70px;

@@ -1,6 +1,5 @@
 <template>
-  <div id="filters">
-      <h3>Filters</h3>
+  <div id="filters"> 
       <p v-for="(filter,index) in filters" :key="index" @click="applyFilter(filter)">
 		{{filter.name}}	  
 	  </p>  
@@ -49,8 +48,13 @@ export default {
 		color: rgb(143, 143, 143);
 		cursor: pointer;
 
-		p {
-			margin-left: 10px;
+		p { 
+			font-size:18px;
+			transition: 0.3s;
+
+			&:hover {
+				color:#deb141;
+			}
 		}
 	}
 </style>

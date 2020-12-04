@@ -10,28 +10,37 @@
           <div id="movie-info">
               <div>
                   <h1>{{movie.name}}</h1>
-                  <h3>{{movie.year}}</h3>
-                  <h3>{{movie.genre}}</h3>
                   <h3>
                       <span 
-                      id="movie-rating"
+                      class="movie-rating"
                       :style="{'background-color':getRatingColor()}">{{movie.rating}}</span>
+					  <span class="movie-rating"
+					  	:style="{'background-color':'#eee7d7','color':'#97948a'}"
+					  >
+						  {{movie.year}}
+					  </span>
+					  <span class="movie-rating"
+					   :style="{'background-color':'#f5c83b','color':'#000000'}"
+					  >
+						  {{movie.genre}}
+					  </span>	 
                   </h3>
-                  <h3>Budget: {{movie.budget}}</h3>
-                  <h3>Box Office: {{movie.boxOffice}}</h3>
-                  <h3>
-                    Actors:
+                  <p>Budget : {{movie.budget}}</p>
+                  <p>Box Office : {{movie.boxOffice}}</p> 
+                  <p>
+                      <strong>
+                          Overview 
+                      </strong><br/>
+                      {{movie.storyline}}
+                  </p>
+
+                  <p>
+                    <strong>Actors</strong> <br/>
                     <span v-for="(actor, index) in movie.actors" :key='index'>
                         {{actor.name}} 
 						<span v-if="index+1 != movie.actors.length">, </span>    
                     </span>    
-                  </h3>  
-                  <h3>
-                      <strong>
-                          Story Line: 
-                      </strong>
-                      {{movie.storyline}}
-                  </h3>
+                  </p> 
               </div>
 
               <div id="options">
@@ -227,25 +236,28 @@ export default {
 				justify-content: space-between;
 
 				h1 {
-					color: white;
+					color: #1b1d1b;
 					margin-bottom: 2rem;
 				}
 
 				h3 {
-					color: rgb(143, 143, 143);
+					color: #1b1d1b;
 
-					#movie-rating {
-						display: flex;
-						justify-content: center;
+					.movie-rating {
+						display: inline-block; 
 						border-radius: 10px;
-						font-size: 20px;
-						width: 53px;
+						font-size: 20px; 
+						padding:5px 20px;
 						color: white;
 					}
 
 					span {
 						margin-right: 5px;
 					}
+				}
+
+				p {
+					font-size:18px;
 				}
 
 				#options {
@@ -257,11 +269,12 @@ export default {
 					.edit {
 						height: 30px;
 						width: 80px;
-						background-color: #5eb85e;
+						background-color:#f5c83b;
 						border: none;
-						text-transform: uppercase;
+						color:#000000; 
+						font-size:16px;
 						font-weight: 600;
-						border-radius: 10px;
+						border-radius: 5px;
 						outline: none;
 						cursor: pointer;
 					}
@@ -269,11 +282,12 @@ export default {
 					.delete {
 						height: 30px;
 						width: 80px;
-						background-color: #e10505;
-						border: none;
-						text-transform: uppercase;
+						background-color: #e44647;
+						color:white;
+						border: none; 
+						font-size:16px;
 						font-weight: 600;
-						border-radius: 10px;
+						border-radius: 5px;
 						outline: none;
 						cursor: pointer;
 					}
@@ -297,7 +311,7 @@ export default {
 			}
 
 			.add-actor {
-				background-color: green;
+				background-color: rgb(89, 136, 107);
 				text-align: center;
 				color: white;
 				margin-left: 5px;
@@ -311,7 +325,7 @@ export default {
 		}
 
 		#update-movie {
-			background-color: #5eb85e;
+			background-color: rgb(89, 136, 107);
 			border: none;
 			padding: 5px;
 			width: 70px;

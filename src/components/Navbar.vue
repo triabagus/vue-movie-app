@@ -1,10 +1,11 @@
 <template>
-    <div id="navbar-wrap" class="card-shadow">
+    <div id="navbar-wrap"> 
         <div id="navbar">
             <h2 @click="$router.push('/')">Movie.io</h2>
             <div v-if="$route.path == '/'"> 
-                <input v-model="search" type="text" placeholder="Find movie..." /> 
+                <input v-model="search" type="text" placeholder="Maybe Avatar?" /> 
             </div>
+			<h2>Logo</h2>
         </div>
     </div>
 </template>
@@ -33,29 +34,32 @@ export default {
 
 		#navbar {
 			display: flex;
-			padding: 15px;
+			padding: 20px;
 			justify-content: space-between;
-			background-color: #a34c01;
+			background-color:#070608;
 
 			h2 {
-				margin: 0 1rem 0 0;
-				color: white;
+				margin: 2px 1rem 0 1rem;
+				color: #c9c9c9;
 				cursor: pointer;
 			}
 
 			& > div {
 				display: flex;
 				flex-grow: 2;
-				justify-content: flex-end;
+				justify-content: center;
 
 				input {
-					width: 20%;
+					width: 40%;
 					border: none;
-					height: 25px;
-					border-radius: 10px;
+					height: 35px;
+					border-radius: 5px;
 					box-sizing: border-box;
 					outline: none;
-					padding: 5px;
+					padding: 15px 30px;
+					font-size: 17px; 
+					color: #454545;
+					background-color:#262626;
 				}
 			}
 		}

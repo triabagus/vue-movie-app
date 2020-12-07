@@ -212,7 +212,7 @@ export default {
 			display: flex;
 			justify-content: center;
 			flex-grow: 1;
-			margin-top: 90px;
+			margin-top: 120px;
 			padding: 0 1rem 10rem 1rem;
 
 			#movie-poster {

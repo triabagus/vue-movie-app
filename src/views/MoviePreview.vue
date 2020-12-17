@@ -336,4 +336,30 @@ export default {
 			outline: none;
 		}
 	}
+
+	@media only screen and (max-width: 500px) {
+		/* For mobile phones: */
+		#movie-preview{
+			#movie-container{ 
+				width: 100%;
+				display:block;
+
+				#movie-poster{
+					width:100%;
+					min-width: 0;
+					img{ 
+						max-width: 100%;
+					}
+				}
+
+				#movie-info {
+					h3{
+						.movie-rating{
+							margin:5px;
+						}
+					}
+				}
+			}
+		} 
+	}
 </style>

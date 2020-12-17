@@ -50,8 +50,7 @@ export default {
 }
 </script>
 
-<style lang='scss' scoped>
- 
+<style lang='scss' scoped> 
 	#navbar-wrap {
 		position: fixed;
 		width: 100%;
@@ -75,6 +74,7 @@ export default {
 
 			img { 
 				width:40px;
+				height:auto;
 			}
 
 			h2 {
@@ -102,5 +102,31 @@ export default {
 				}
 			}
 		}
-	}
+	} 
+
+	@media only screen and (max-width: 768px) {
+		/* For tablet: */
+		#navbar-wrap {
+			#navbar {
+				flex-wrap:wrap; 
+				justify-content: center;
+				padding:10px;
+
+				h2 {
+					margin:5px 0px;
+				}
+
+				img{
+					display:none;
+				}
+
+				& > div {
+					input{
+						width:80%; 
+						text-align: center;
+					}
+				}
+			}
+		}
+	}	
 </style>

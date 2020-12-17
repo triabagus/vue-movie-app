@@ -2,7 +2,7 @@
   <div id="sidebar"> 
       <Filters /> 
       <button @click="showModal = true">+ Add Movie</button>
-
+		
 	  <Modal v-if="showModal" @close="showModal = !showModal">
 		<template v-slot:header>
 			<h3 class="m-0">Create new movie</h3>
@@ -210,6 +210,13 @@ export default {
 			cursor: pointer;
 			text-transform: uppercase;
 			outline: none;
+		}
+	}
+
+	@media only screen and (max-width: 500px) {
+		/* For mobile: */
+		#sidebar {
+			display:none;
 		}
 	}
 </style>

@@ -1,15 +1,20 @@
 <template>
   <div id="movie-container"> 
+	<div id="top-bar">
+		<Filters />   
+	</div>   
 	<Movie v-for="movie in movies" :key="movie.id" :movie="movie" /> 	
   </div>
 </template>
 
 <script>
-import Movie from './Movie'
+import Filters from '../components/Filters' 
+import Movie from './Movie' 
 
 export default {
 	components:{
-		Movie
+		Filters,
+		Movie 
 	},
 
 	data() {
@@ -30,7 +35,8 @@ export default {
 	
 	created() {  
 		this.$store.dispatch('fetchMovies')
-	} 
+	},
+	 
 }
 </script>
 
@@ -41,5 +47,18 @@ export default {
 		flex-wrap: wrap;
 		flex-grow: 2;
 		justify-content: center;
+
+		#top-bar{
+			display:none;
+		}
+	}
+
+	@media only screen and (max-width: 500px) {
+		/* For mobile: */
+		#movie-container { 
+			#top-bar{
+				display: block; 
+			}
+		}
 	}
 </style>

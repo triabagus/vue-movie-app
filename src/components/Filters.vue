@@ -37,6 +37,7 @@ export default {
 	methods:{
 		applyFilter(filter){
 			this.$store.dispatch('filter', filter);
+			console.log(filter)
 		}
 	}
 }
